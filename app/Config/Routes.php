@@ -36,11 +36,11 @@ $routes->setAutoRoute(false);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/login', 'Login::index');
-$routes->get('/registrasi', 'Registrasi::index');
-$routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/alternatif', 'Alternatif::index');
-$routes->get('/kriteria', 'Kriteria::index');
+$routes->get('/login', 'LoginController::index');
+$routes->get('/register', 'RegisterController::index');
+$routes->get('/dashboard', 'DashboardController::index');
+$routes->get('/alternative', 'AlternativeController::index');
+$routes->get('/criteria', 'CriteriaController::index');
 
 
 /*

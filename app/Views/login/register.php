@@ -17,11 +17,9 @@
 
 <body>
     <section class="container-fluid mt-5">
-        <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
                 <form class="form-container">
-                    <!-- <center> <img class="mb-2" src="/img/user.png" width="25%" height="50%"> </center> -->
                     <h4 class="text-center font-weight-bold">Registrasi</h4>
                     <div class="form-group">
                         <label for="name">Nama</label>
