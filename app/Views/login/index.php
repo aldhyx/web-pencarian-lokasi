@@ -29,10 +29,10 @@
                             <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                         </div>
 
-                        <button class="w-100 fw-bold btn btn-lg btn-success" type="submit">
+                        <a href="/dashboard" class="w-100 fw-bold btn btn-lg btn-success" type="submit">
                             <span>Login</span>
                             <i class="fa-solid fa-right-to-bracket ms-2"></i>
-                        </button>
+                        </a>
                         <p class="mt-4"> Belum Punya akun! <a href="/register">Daftar</a></p>
                 </div>
             </div>
