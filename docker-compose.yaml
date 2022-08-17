@@ -23,7 +23,7 @@ services:
     container_name: promethee-phpmyadmin
     restart: always
     ports:
-      - 8086:80
+      - "${DOCKER_PHPMYADMIN_PORT}:80"
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - PMA_HOST=mysql
