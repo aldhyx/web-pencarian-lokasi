@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+
+  # mysql
+  mysql:
+    image: mysql:latest
+    container_name: dash-mysql
+    restart: unless-stopped
+    ports:
+      - "${DOCKER_DB_PORT}:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - net
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: promethee-phpmyadmin
+    restart: always
+    ports:
+      - 8086:80
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - PMA_HOST=mysql
+      - HIDE_PHP_VERSION=true
+      - PMA_PORT=${DOCKER_DB_PORT}
+    depends_on:
+      - mysql
+    networks:
+      - net
+
+# Docker Networks
+networks:
+  net:
+    driver: bridge
+    name: promethee-network
+
+# Docker Volumes
+volumes:
+  data:
+    name: promethee-volume
