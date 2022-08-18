@@ -1,6 +1,7 @@
 version: '3.8'
 services:
-
+  # up: docker compose --env-file .env-docker up --build 
+  # down: docker compose --env-file .env-docker down
   # mysql
   mysql:
     image: mysql:latest
