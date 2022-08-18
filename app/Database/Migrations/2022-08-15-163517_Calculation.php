@@ -15,13 +15,13 @@ class Calculation extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'id'    => [
+            'id_criteria'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
                 'null' => true,
             ],
-            'id'    => [
+            'id_alternative'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
@@ -33,8 +33,8 @@ class Calculation extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('id', 'alternative', 'id');
-        $this->forge->addForeignKey('id', 'criteria', 'id');
+        $this->forge->addForeignKey('id_criteria', 'criteria', 'id', 'NO ACTION', 'SET NULL');
+        $this->forge->addForeignKey('id_alternative', 'alternative', 'id', 'NO ACTION', 'SET NULL');
         $this->forge->createTable('calculation');
     }
 
