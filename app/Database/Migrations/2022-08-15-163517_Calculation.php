@@ -9,19 +9,19 @@ class Calculation extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_Calculation'    => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'id_alternative'    => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
                 'null' => true,
             ],
-            'id_criteria'    => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
@@ -32,9 +32,9 @@ class Calculation extends Migration
                 'constraint' => 100,
             ],
         ]);
-        $this->forge->addKey('id_Calculation', true);
-        $this->forge->addForeignKey('id_alternative', 'alternative', 'id_alternative');
-        $this->forge->addForeignKey('id_criteria', 'criteria', 'id_criteria');
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('id', 'alternative', 'id');
+        $this->forge->addForeignKey('id', 'criteria', 'id');
         $this->forge->createTable('calculation');
     }
 

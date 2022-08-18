@@ -9,7 +9,7 @@ class Criteria extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_criteria'    => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
@@ -24,7 +24,7 @@ class Criteria extends Migration
                 'constraint'     => 10,
             ],
         ]);
-        $this->forge->addKey('id_criteria', true);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('criteria');
     }
 

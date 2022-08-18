@@ -9,7 +9,7 @@ class Alternative extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_alternative'    => [
+            'id'    => [
                 'type'           => 'INT',
                 'constraint'     => 10,
                 'unsigned'       => true,
@@ -24,7 +24,7 @@ class Alternative extends Migration
                 'constraint'     => 10,
             ],
         ]);
-        $this->forge->addKey('id_alternative', true);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('alternative');
     }
 
