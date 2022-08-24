@@ -41,6 +41,10 @@ $routes->get('/register', 'RegisterController::index');
 $routes->get('/dashboard', 'DashboardController::index');
 $routes->get('/alternative', 'AlternativeController::index');
 $routes->get('/criteria', 'CriteriaController::index');
+$routes->add('/alternative', 'AlternativeController::create');
+$routes->delete('/alternative/(:num)', 'AlternativeController::delete/$1');
+$routes->add('/alternative/edit/(:num)', 'AlternativeController::edit/$1');
+$routes->add('/alternative/update/(:num)', 'AlternativeController::update/$1');
 
 
 /*
