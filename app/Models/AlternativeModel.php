@@ -10,7 +10,7 @@ class AlternativeModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['name', 'code'];
 
-    public function getalternative($id = false)
+    public function getAlternative($id = false)
     {
         if ($id == false) {
             return $this->findAll();

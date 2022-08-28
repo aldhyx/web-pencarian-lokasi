@@ -11,6 +11,7 @@ class AlternativeController extends BaseController
     {
         $this->AlternativeModel = new AlternativeModel();
     }
+
     public function index()
     {
         $alternative = $this->AlternativeModel->findAll();
@@ -19,26 +20,22 @@ class AlternativeController extends BaseController
             'title' => 'Data Alternative',
             'alternative' => $alternative
         ];
+
         return view('alternative/index', $data);
     }
 
-
     public function create()
     {
-
         $alternative = new AlternativeModel();
+     
         $alternative->insert([
             "name" => $this->request->getPost('name'),
             "code" => $this->request->getPost('code'),
-
         ]);
+
         session()->setFlashdata('pesan', 'Data berhasil ditambakan.');
 
-        return redirect('alternative');
-        // }
-
-        // tampilkan form create
-        return  view('alternative');
+        return redirect('alternative.index');
     }
 
     public function delete($id)
@@ -46,14 +43,14 @@ class AlternativeController extends BaseController
         $this->AlternativeModel->delete($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
 
-        return redirect('alternative');
+        return redirect('alternative.index');
     }
 
     public function edit($id)
     {
         $data = [
             'title' => 'form edit data',
-            'alternative' => $this->AlternativeModel->getalternative($id)
+            'alternative' => $this->AlternativeModel->getAlternative($id)
         ];
 
         return view('alternative/edit', $data);
@@ -66,7 +63,8 @@ class AlternativeController extends BaseController
             "name" => $this->request->getPost('name'),
             "code" => $this->request->getPost('code'),
         ]);
+        
         session()->setFlashdata('pesan', 'Data berhasil Update.');
-        return redirect()->to('alternative');
+        return redirect('alternative.index');
     }
 }
