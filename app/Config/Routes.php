@@ -39,13 +39,19 @@ $routes->get('/', 'Home::index');
 $routes->get('/login', 'LoginController::index');
 $routes->get('/register', 'RegisterController::index');
 $routes->get('/dashboard', 'DashboardController::index');
-$routes->get('/criteria', 'CriteriaController::index');
 
 $routes->get('/alternative', 'AlternativeController::index', ['as' => 'alternative.index']);
 $routes->get('/alternative/(:num)', 'AlternativeController::edit/$1', ['as' => 'alternative.detail']);
 $routes->post('/alternative/(:num)', 'AlternativeController::update/$1', ['as' => 'alternative.update']);
 $routes->post('/alternative', 'AlternativeController::create', ['as' => 'alternative.create']);
 $routes->delete('/alternative/(:num)', 'AlternativeController::delete/$1', ['as' => 'alternative.delete']);
+
+$routes->get('/criteria', 'CriteriaController::index', ['as' => 'criteria.index']);
+$routes->get('/criteria/(:num)', 'CriteriaController::edit/$1', ['as' => 'criteria.detail']);
+$routes->post('/criteria/(:num)', 'CriteriaController::update/$1', ['as' => 'criteria.update']);
+$routes->post('/criteria', 'CriteriaController::create', ['as' => 'criteria.create']);
+$routes->delete('/criteria/(:num)', 'CriteriaController::delete/$1', ['as' => 'criteria.delete']);
+
 
 
 /*
