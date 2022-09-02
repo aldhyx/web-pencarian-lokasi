@@ -27,7 +27,7 @@ class AlternativeController extends BaseController
     public function create()
     {
         $alternative = new AlternativeModel();
-     
+
         $alternative->insert([
             "name" => $this->request->getPost('name'),
             "code" => $this->request->getPost('code'),
@@ -63,7 +63,7 @@ class AlternativeController extends BaseController
             "name" => $this->request->getPost('name'),
             "code" => $this->request->getPost('code'),
         ]);
-        
+
         session()->setFlashdata('pesan', 'Data berhasil Update.');
         return redirect('alternative.index');
     }
