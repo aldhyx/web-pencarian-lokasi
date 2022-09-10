@@ -8,7 +8,7 @@
                     <h2 class="text-center my-0 py-4 fw-bold text-uppercase"> Form Ubah Data Kriteria</h2>
                 </div>
                 <div class="card-body">
-                    <form action="<?= url_to('criteria.update', $criteria['id']) ?>" method="post">
+                    <form action="<?= url_to('admin.criteria.update', $criteria['id']) ?>" method="post">
                         <?= csrf_field(); ?>
                         <input type="hidden" name="id" value="<?= $criteria['id']; ?>">
                         <div class="form-group row">
@@ -28,7 +28,7 @@
                             <div class="col-sm-10">
                                 <button type="submit" class="btn btn-primary text-uppercase fw-bold"><i class="bi bi-pencil-square"></i> ubah data
                                 </button>
-                                <a href="<?= url_to('criteria.index'); ?>" class="btn text-uppercase fw-bold">Batalkan</a>
+                                <a href="<?= url_to('admin.criteria.index'); ?>" class="btn text-uppercase fw-bold">Batalkan</a>
                             </div>
                         </div>
                     </form>

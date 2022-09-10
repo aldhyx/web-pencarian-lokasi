@@ -40,10 +40,10 @@
                                     <td> <?= $item['code']; ?> </td>
                                     <td> <?= $item['name']; ?> </td>
                                     <td>
-                                        <a href="<?= url_to('alternative.detail', $item['id']) ?>" class=" btn btn-outline-dark text-uppercase fw-bold">
+                                        <a href="<?= url_to('admin.alternative.detail', $item['id']) ?>" class=" btn btn-outline-dark text-uppercase fw-bold">
                                             <i class="bi bi-pencil-square"></i> Edit
                                         </a>
-                                        <form action="<?= url_to('alternative.delete', $item['id']) ?>" method="post" class="d-inline">
+                                        <form action="<?= url_to('admin.alternative.delete', $item['id']) ?>" method="post" class="d-inline">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class=" btn btn-outline-danger text-uppercase fw-bold" onclick="return confirm('Apakah kamu yakin ?')"><i class="bi bi-trash3"></i> Hapus</button>
@@ -72,7 +72,7 @@
                 Form tambah data alternatif
             </h4>
         </div>
-        <form action="alternative" method="post" action="<?= url_to('alternative.create'); ?>">
+        <form action="alternative" method="post" action="<?= url_to('admin.alternative.create'); ?>">
             <?= csrf_field(); ?>
             <div class="modal-body">
                 <div class="form-group row">

@@ -38,19 +38,31 @@ $routes->setAutoRoute(false);
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'LoginController::index');
 $routes->get('/register', 'RegisterController::index');
-$routes->get('/dashboard', 'DashboardController::index');
 
-$routes->get('/alternative', 'AlternativeController::index', ['as' => 'alternative.index']);
-$routes->get('/alternative/(:num)', 'AlternativeController::edit/$1', ['as' => 'alternative.detail']);
-$routes->post('/alternative/(:num)', 'AlternativeController::update/$1', ['as' => 'alternative.update']);
-$routes->post('/alternative', 'AlternativeController::create', ['as' => 'alternative.create']);
-$routes->delete('/alternative/(:num)', 'AlternativeController::delete/$1', ['as' => 'alternative.delete']);
 
-$routes->get('/criteria', 'CriteriaController::index', ['as' => 'criteria.index']);
-$routes->get('/criteria/(:num)', 'CriteriaController::edit/$1', ['as' => 'criteria.detail']);
-$routes->post('/criteria/(:num)', 'CriteriaController::update/$1', ['as' => 'criteria.update']);
-$routes->post('/criteria', 'CriteriaController::create', ['as' => 'criteria.create']);
-$routes->delete('/criteria/(:num)', 'CriteriaController::delete/$1', ['as' => 'criteria.delete']);
+$routes->group('admin', static function ($routes) {
+    $routes->get('/', 'DashboardController::index');
+    $routes->get('dashboard', 'DashboardController::index');
+
+
+    $routes->group('alternative', static function ($routes) {
+        $routes->get('/', 'AlternativeController::index', ['as' => 'admin.alternative.index']);
+        $routes->get('(:num)', 'AlternativeController::edit/$1', ['as' => 'admin.alternative.detail']);
+        $routes->post('(:num)', 'AlternativeController::update/$1', ['as' => 'admin.alternative.update']);
+        $routes->post('/', 'AlternativeController::create', ['as' => 'admin.alternative.create']);
+        $routes->delete('(:num)', 'AlternativeController::delete/$1', ['as' => 'admin.alternative.delete']);
+    });
+
+
+    $routes->group('criteria', static function ($routes) {
+        $routes->get('/', 'CriteriaController::index', ['as' => 'admin.criteria.index']);
+        $routes->get('(:num)', 'CriteriaController::edit/$1', ['as' => 'admin.criteria.detail']);
+        $routes->post('(:num)', 'CriteriaController::update/$1', ['as' => 'admin.criteria.update']);
+        $routes->post('/', 'CriteriaController::create', ['as' => 'admin.criteria.create']);
+        $routes->delete('(:num)', 'CriteriaController::delete/$1', ['as' => 'admin.criteria.delete']);
+    });
+});
+
 
 
 

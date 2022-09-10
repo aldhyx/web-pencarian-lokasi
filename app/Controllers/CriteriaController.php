@@ -31,7 +31,7 @@ class CriteriaController extends BaseController
 
         session()->setFlashdata('pesan', 'Data berhasil ditambakan.');
 
-        return redirect('criteria.index');
+        return redirect('admin.criteria.index');
     }
 
     public function delete($id)
@@ -39,7 +39,7 @@ class CriteriaController extends BaseController
         $this->CriteriaModel->delete($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
 
-        return redirect('criteria.index');
+        return redirect('admin.criteria.index');
     }
 
     public function edit($id)
@@ -61,6 +61,6 @@ class CriteriaController extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil Update.');
-        return redirect('criteria.index');
+        return redirect('admin.criteria.index');
     }
 }

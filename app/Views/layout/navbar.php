@@ -7,8 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <a class="nav-link nav-item active" href="/alternative">Alternatif</a>
-                <a class="nav-link" href="/criteria"> Kriteria</a>
+                <a class="nav-link" href="<?= url_to('admin.alternative.index'); ?>">Alternatif</a>
+                <a class="nav-link" href="<?= url_to('admin.criteria.index'); ?>"> Kriteria</a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Perhitungan

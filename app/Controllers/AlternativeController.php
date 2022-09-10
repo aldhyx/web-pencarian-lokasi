@@ -35,7 +35,7 @@ class AlternativeController extends BaseController
 
         session()->setFlashdata('pesan', 'Data berhasil ditambakan.');
 
-        return redirect('alternative.index');
+        return redirect('admin.alternative.index');
     }
 
     public function delete($id)
@@ -43,7 +43,7 @@ class AlternativeController extends BaseController
         $this->AlternativeModel->delete($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
 
-        return redirect('alternative.index');
+        return redirect('admin.alternative.index');
     }
 
     public function edit($id)
@@ -65,6 +65,6 @@ class AlternativeController extends BaseController
         ]);
 
         session()->setFlashdata('pesan', 'Data berhasil Update.');
-        return redirect('alternative.index');
+        return redirect('admin.alternative.index');
     }
 }
